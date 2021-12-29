@@ -19,3 +19,9 @@ database Seeder path is "database\seeders\DatabaseSeeder.php"
 ```
 php artisan migrate:refresh  --seed
 ```
+
+### First Question Url 
+```
+api/v1/quiz/1
+```
+

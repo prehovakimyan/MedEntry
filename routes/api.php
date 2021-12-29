@@ -19,14 +19,9 @@ Route::group([
     'namespace' => 'Api'
 ],
     function () {
-
-        Route::get('/', function () {
-            return 'Hesssllo World';
-        });
-        Route::get('/quizes', 'QuizController@allQuize');
         Route::get('quiz/{id}/{user?}', 'QuizController@getQuizeById');
-        Route::post('save-quiz/{user}', 'QuizController@setQuizeAnswer');
         Route::post('quiz/{id}', 'QuizController@quizTempAnswer');
+        Route::post('save-quiz/{user}', 'QuizController@setQuizeAnswer');
     });
 
 

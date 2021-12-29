@@ -29,12 +29,12 @@ class QuizController extends Controller
 
         if($id == 1) {
             $response['token'] = $token = sha1(mt_rand(1, 90000) . 'SALT');
-            $response['next_question_url'] = url('/').'/api/v1/quiz/'.($id + 1).'/'.$token;
+            $response['save_answer_url'] = url('/').'/api/v1/quiz/'.($id + 1);
         } else {
             if($id == 10) {
-                $response['next_question_url'] = url('/').'/api/v1/save-quiz/'.$user_token;
+                $response['save_answer_url'] = url('/').'/api/v1/save-quiz/'.$user_token;
             } else {
-                $response['next_question_url'] = url('/').'/api/v1/quiz/'.($id + 1).'/'.$user_token;
+                $response['save_answer_url'] = url('/').'/api/v1/quiz/'.($id + 1);
             }
             $response['prev_question_url'] = url('/').'/api/v1/quiz/'.($id - 1).'/'.$user_token;
             $response['token'] = $user_token;
